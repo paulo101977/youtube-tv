@@ -6,7 +6,7 @@ An electron wrapper for OiPlay TV with Chromecast support.
 
 ----
 <p align="center">
-  <img width="650" align="center" src="https://github.com/KeizerDev/youtube-tv/blob/master/youtube-tv.png">
+  <a width="650" align="center" src="https://github.com/paulo101977/youtube-tv">Git</a>
 </p>
 
 ## Install
