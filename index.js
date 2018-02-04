@@ -1,8 +1,14 @@
+//const electron = require('electron');
+//const app = electron.app;
+//const BrowserWindow = electron.BrowserWindow;
+//
 const electron = require('electron');
-// Module to control application life.
-const {app} = electron;
+const app = require('app');
+const BrowserWindow = require('browser-window')
+
+//const app = require('app');
 // Module to create native browser window.
-const {BrowserWindow} = electron;
+//const {BrowserWindow} = electron;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -13,7 +19,7 @@ function createWindow() {
   win = new BrowserWindow({width: 800, height: 600, titleBarStyle: 'hidden'});
 
   // and load the index.html of the app.
-  win.loadURL('https://www.youtube.com/tv');
+  win.loadURL('https://www.oiplay.tv/');
 
   // Open the DevTools.
   // win.webContents.openDevTools();

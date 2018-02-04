@@ -1,7 +1,7 @@
-<h1 align="center">Youtube TV</h1>
+<h1 align="center">OiPlay TV</h1>
 
 <p align="center">
-An electron wrapper for Youtube TV with Chromecast support.
+An electron wrapper for OiPlay TV with Chromecast support.
 </p>
 
 ----
@@ -15,4 +15,3 @@ $ npm install
 # Make sure you've electron installed globally ((sudo) npm install electron-prebuilt -g)
 $ electron index.js
 ```
-
