@@ -3,13 +3,11 @@
   "version": "0.1.0",
   "main": "index.js",
   "dependencies": {
-    "app": "^0.1.0",
-    "electron": "^1.7.12",
     "electron-cookies": "^1.1.0"
   },
   "scripts": {
     "build": "electron index.js",
-    "start": "./node_modules/.bin/electron ."
+    "start": "electron ."
   },
   "description": "That is a WebTv OiPlay Alternative",
   "email": "paulo10.1977@yahoo.com.br",

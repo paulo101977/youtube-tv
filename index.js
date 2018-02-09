@@ -1,14 +1,8 @@
-//const electron = require('electron');
-//const app = electron.app;
-//const BrowserWindow = electron.BrowserWindow;
-//
 const electron = require('electron');
-const app = require('app');
-const BrowserWindow = require('browser-window')
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
+const session = electron.session
 
-//const app = require('app');
-// Module to create native browser window.
-//const {BrowserWindow} = electron;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -16,13 +10,24 @@ let win;
 
 function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({width: 800, height: 600, titleBarStyle: 'hidden'});
+  win = new BrowserWindow(
+    {
+      width: 800,
+      height: 600,
+      titleBarStyle: 'hidden',
+      'node-integration': false
+    });
 
-  // and load the index.html of the app.
+  session.defaultSession.cookies.set({
+    url: '/',
+    domain: '.oiplay.tv'
+  }, (error)=>{})
+
+  // and load the url of the app.
   win.loadURL('https://www.oiplay.tv/');
 
   // Open the DevTools.
-  // win.webContents.openDevTools();
+  win.webContents.openDevTools();
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -37,6 +42,12 @@ function createWindow() {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow);
+
+app.on('ready', () => {
+  electron.powerMonitor.on('resume', () => {
+    //createWindow();
+  })
+})
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
